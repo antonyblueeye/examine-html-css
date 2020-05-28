@@ -1,0 +1,65 @@
+@mixin js-font($weight) {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: $weight;
+}
+
+@mixin aleo-font {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+
+@mixin flexbox-row($just-cont: flex-start, $al-it: stretch) {
+  display: flex;
+  justify-content: $just-cont;
+  align-items: $al-it;
+}
+
+@mixin flexbox-column($just-cont: flex-start, $al-it: stretch) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $just-cont;
+  align-items: $al-it;
+}
+
+@mixin btn-style {
+  margin-top: 48px;
+  width: 225px;
+  background: url("../img/btn-bg.png") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  @include aleo-font;
+  color: $light-color;
+  font-size: 16px;
+  line-height: 60px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  transition: 0.3s ease-in;
+  &:hover {
+    filter: brightness(0.9);
+  }
+  @media screen and (max-width: $screen-sm) {
+    line-height: 40px;
+    width: 180px;
+  }
+}
+
+@mixin text-style {
+  @include js-font(400);
+  color: #e8e8e8;
+  font-size: 16px;
+  line-height: 26px;
+  @media screen and (max-width: $screen-sm) {
+    font-size: 13px;
+  }
+}
+
+@mixin title-style {
+  @include aleo-font;
+  color: $light-color;
+  font-size: 36px;
+  line-height: 26px;
+  @media screen and (max-width: $screen-sm) {
+    font-size: 30px;
+  }
+}
